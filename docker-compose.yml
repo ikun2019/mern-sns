@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  api:
+    container_name: api
+    platform: linux/amd64
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./api:/app
+    env_file:
+      - ./api/.env
+  client:
+    container_name: client
+    platform: linux/amd64
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client:/app
+    env_file:
+      - ./client/.env
+    depends_on:
+      - api
