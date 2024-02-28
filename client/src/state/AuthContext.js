@@ -8,7 +8,7 @@ const initialState = {
     username: "ikun9999",
     email: "0215.miyatto@gmail.com",
     password: "02151353",
-    profilePicture: "",
+    profilePicture: "/person/1.jpeg",
     coverPicture: "",
     followers: [],
     followings: [],

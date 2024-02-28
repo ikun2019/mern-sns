@@ -17,7 +17,7 @@ const Profile = () => {
 			const response = await axios.get(`http://localhost:8080/api/users?username=${username}`);
 			setUser(response.data);
 		})();
-	}, []);
+	}, [username]);
 	return (
 		<>
 			<Topbar />
@@ -32,7 +32,7 @@ const Profile = () => {
 								className="profileCoverImg"
 							/>
 							<img
-								src={user.profilePicture || PUBLIC_FOLDER + '/person/noAvater.png'}
+								src={PUBLIC_FOLDER + user.profilePicture || PUBLIC_FOLDER + '/person/noAvater.png'}
 								alt=""
 								className="profileUserImg"
 							/>
